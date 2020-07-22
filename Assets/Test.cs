@@ -23,12 +23,12 @@ public class Boss
 		//魔法攻撃の関数
 	    public void Magic()
 		{
-			if(this.mp > 5)
+			if(this.mp >= 5)
 			{
 				this.mp -= 5;
 				Debug.Log( "魔法攻撃をした。残りMPは"+ mp + "。");
 			}
-			else if(mp <= 4)
+			else if(mp < 4)
 			{
 			   Debug.Log( "MPが足りないため魔法が使えない。");
 			}
