@@ -23,9 +23,12 @@ public class Boss
 		//魔法攻撃の関数
 	    public void Magic()
 		{
-			this.mp -= 5;
-			Debug.Log( "魔法攻撃をした。残りMPは"+ mp + "。");
-			if(mp <= 5)
+			if(this.mp > 5)
+			{
+				this.mp -= 5;
+				Debug.Log( "魔法攻撃をした。残りMPは"+ mp + "。");
+			}
+			else if(mp <= 4)
 			{
 			   Debug.Log( "MPが足りないため魔法が使えない。");
 			}
@@ -58,7 +61,7 @@ public class Test : MonoBehaviour
 			 lastboss.Attack();
 			 //防御用の関数を呼び出す
 			 lastboss.Defence(3);		
-			 for(int i = 0; i < 10; i ++)
+			 for(int i = 0; i < 11; i ++)
 			 	{
 			 		//魔法攻撃用の関数を呼び出す
 			 		lastboss.Magic();
